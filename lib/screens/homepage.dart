@@ -41,7 +41,6 @@ class _HomepageScreenState extends State<HomepageScreen>
             GameTab(),
             AppTab(),
             BookTab(),
-
           ]),
       // body: Container(
       //   child: pages.elementAt(botTab),
@@ -99,6 +98,7 @@ class _HomepageScreenState extends State<HomepageScreen>
           labelColor: iconColor,
           controller: _tabController,
           unselectedLabelColor: grey1,
+          indicatorColor: highlight,
           tabs: <Widget>[
             Tab(
               icon: Icon(Icons.videogame_asset_outlined),
