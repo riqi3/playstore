@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:playstore/constants/colors.dart';
 
 class AppTab extends StatefulWidget {
   const AppTab({super.key});
@@ -16,7 +16,7 @@ class _TopTabBarState extends State<AppTab>
   void initState() {
     super.initState();
 
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
   }
 
   @override
@@ -32,6 +32,7 @@ class _TopTabBarState extends State<AppTab>
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
+              backgroundColor: Colors.white,
               pinned: true,
               floating: true,
               title: Row(
@@ -42,17 +43,27 @@ class _TopTabBarState extends State<AppTab>
                 ],
               ),
               bottom: TabBar(
+                isScrollable: true,
+                labelPadding: EdgeInsets.only(left: 20, right: 20),
                 controller: _tabController,
-                labelColor: Colors.black,
+                unselectedLabelColor: grey1,
+                indicatorColor: Colors.blue,
+                labelColor: highlight,
+                indicator: UnderlineTabIndicator(
+                  borderSide: BorderSide(width: 3.0),
+                ),
                 tabs: <Widget>[
                   Tab(
-                    text: '1',
+                    text: 'For you',
                   ),
                   Tab(
-                    text: '2',
+                    text: 'Top charts',
                   ),
                   Tab(
-                    text: '3',
+                    text: 'Kids',
+                  ),
+                  Tab(
+                    text: 'Categories',
                   ),
                 ],
               ),
@@ -62,9 +73,10 @@ class _TopTabBarState extends State<AppTab>
         body: TabBarView(
           controller: _tabController,
           children: <Widget>[
-            Text('1 app'),
-            Text('2 app'),
-            Text('3 app'),
+            Text('for you'),
+            Text('top charts'),
+            Text('kids'),
+            Text('categories'),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playstore/constants/colors.dart';
 
 class BookTab extends StatefulWidget {
   const BookTab({super.key});
@@ -15,7 +16,7 @@ class _TopTabBarState extends State<BookTab>
   void initState() {
     super.initState();
 
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 6, vsync: this);
   }
 
   @override
@@ -31,6 +32,7 @@ class _TopTabBarState extends State<BookTab>
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
+              backgroundColor: Colors.white,
               pinned: true,
               floating: true,
               title: Row(
@@ -41,17 +43,33 @@ class _TopTabBarState extends State<BookTab>
                 ],
               ),
               bottom: TabBar(
+                isScrollable: true,
+                labelPadding: EdgeInsets.only(left: 25, right: 25),
                 controller: _tabController,
-                labelColor: Colors.black,
+                unselectedLabelColor: grey1,
+                indicatorColor: Colors.blue,
+                labelColor: highlight,
+                indicator: UnderlineTabIndicator(
+                  borderSide: BorderSide(width: 3.0),
+                ),
                 tabs: <Widget>[
                   Tab(
-                    text: '1',
+                    text: 'Ebooks',
                   ),
                   Tab(
-                    text: '2',
+                    text: 'Audiobooks',
                   ),
                   Tab(
-                    text: '3',
+                    text: 'Genres',
+                  ),
+                  Tab(
+                    text: 'Top selling',
+                  ),
+                  Tab(
+                    text: 'New releases',
+                  ),
+                  Tab(
+                    text: 'Top free',
                   ),
                 ],
               ),
@@ -61,9 +79,12 @@ class _TopTabBarState extends State<BookTab>
         body: TabBarView(
           controller: _tabController,
           children: <Widget>[
-            Text('1 book'),
-            Text('2 book'),
-            Text('3 book'),
+            Text('ebooks'),
+            Text('audiobooks'),
+            Text('genres'),
+            Text('top selling'),
+             Text('new releases'),
+              Text('top free'),
           ],
         ),
       ),
