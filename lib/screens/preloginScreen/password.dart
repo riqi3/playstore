@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:playstore/constants/colors.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+import '../Homepage.dart';
+
+class PasswordScreen extends StatefulWidget {
+  const PasswordScreen({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<PasswordScreen> createState() => _PasswordScreen();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _PasswordScreen extends State<PasswordScreen> {
+  bool? isChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +22,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 30),
+              SizedBox(height: 50),
               Text(
                   "Google",
                 style: TextStyle(
@@ -29,25 +33,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               SizedBox(height: 15),
               Text(
-                  "Account recovery",
+                  "Welcome",
                 style: TextStyle(
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
               ),
               SizedBox(height: 5),
-
-                  Text(
-                  "To help your account safe, Google wants to make sure it's really you trying to sign in",
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 15,
-                ), 
-              ),
-
-              SizedBox(height: 5),
-
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                children: [
                   Text(
                   "anonymous@gmail.com",
                 style: TextStyle(
@@ -55,35 +50,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   fontSize: 15,
                 ), 
               ),
-            
-              SizedBox(height: 15),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                  "        Get a verification code",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold
-                ), 
-              ),
-                ],),
+              ],
               
-              SizedBox(height: 10),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                  "        To get a verification code, first confirm the recovery email address you added to your account ear***********@yahoo.com",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold
-                ), 
               ),
-                ],),
+              
               SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 35.0),
@@ -96,10 +66,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 10.0),
                     child: TextField(
+                      obscureText: true,
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: "Enter recovery email address",
+                        hintText: "Enter your password",
                         hintStyle: TextStyle(
                   color: Colors.grey,
                   fontSize: 15,
@@ -109,23 +80,51 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
               ),
-              
+              SizedBox(width: 10),
+              Row(
+                children: <Widget>[
+                  Theme(
+                    data: ThemeData(unselectedWidgetColor: Colors.white),
+                      child: Checkbox(
+                          value: isChecked,
+                          activeColor: Colors.blueAccent,
+                          onChanged: (newBool) {
+                            setState(() {
+                              isChecked = newBool;
+                            });
+                          },
+                        ),         
+                  ),
+              Text("     Show Password",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                ),
+              ),
+              ],),
              SizedBox(height: 50),
              Row(
                 mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text('           Try another way', 
-                style: TextStyle(
-                  color: Colors.lightBlueAccent,
-                  fontWeight: FontWeight.bold
-                  )),
+                // Text('           Forgot Password?', 
+                // style: TextStyle(
+                //   color: Colors.lightBlueAccent,
+                //   fontWeight: FontWeight.bold
+                //   )),
+                TextButton(
+                      onPressed: () {}, child: const Text("          Forgot Password?",
+                     style: TextStyle(
+                  color: Colors.blueAccent,
+                  fontSize: 15,
+                ), 
+                )),
               ]
              ),
               SizedBox(height: 100),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 185.0,
-                  vertical: 260.0,
+                  horizontal: 30.0,
+                  vertical: 140.0,
                   
                   ),
                 child: Row(
@@ -137,6 +136,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         color: Colors.lightBlueAccent,
                         borderRadius: BorderRadius.circular(5),
                         ),
+                      child: MaterialButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomepageScreen()));
+                  },
                       child: Center(
                         child: Text(
                           'Next',
@@ -145,7 +149,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                     ),
-                  ],
+                )],
                 ),
               ),
           ]
