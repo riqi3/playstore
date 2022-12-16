@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:playstore/constants/colors.dart';
 
+import '../../widget/carousel.dart';
+
 class GameTab extends StatefulWidget {
   const GameTab({super.key});
 
@@ -76,7 +78,38 @@ class _TopTabBarState extends State<GameTab>
         body: TabBarView(
           controller: _tabController,
           children: <Widget>[
-            Text('for you'),
+                        Container(
+              width: 500,
+              child: ListView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(
+                          'Top-rated games',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w900, fontSize: 20),
+                        ),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Icon(Icons.arrow_forward_rounded),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        carousel(),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
             Text('top charts'),
             Text('kids'),
             Text('premium'),
