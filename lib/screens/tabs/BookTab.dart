@@ -32,16 +32,37 @@ class _TopTabBarState extends State<BookTab>
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
-              backgroundColor: Colors.white,
+              backgroundColor: Color.fromARGB(255, 167, 75, 75),
               pinned: true,
               floating: true,
-              title: Row(
-                children: [
-                  const Text('s'),
-                  Expanded(child: Container()),
-                  const Icon(Icons.search),
-                ],
-              ),
+              title:Row(
+                  children: [
+                    Row(
+                      children: <Widget> [
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: new Container(
+                                  child: Icon(Icons.search),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: new Container(
+                                  child: Text('Search Books', style: TextStyle(color: Colors.black87),),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               bottom: TabBar(
                 isScrollable: true,
                 labelPadding: EdgeInsets.only(left: 25, right: 25),
