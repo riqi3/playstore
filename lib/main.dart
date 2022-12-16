@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:playstore/screens/Homepage.dart';
 
+import 'screens/preloginScreen/signup.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
       ),
       debugShowCheckedModeBanner: false,
-      home: HomepageScreen(),
+      home: SignUpScreen(),
     );
   }
 }
