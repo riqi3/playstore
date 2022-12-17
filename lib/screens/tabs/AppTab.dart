@@ -85,9 +85,9 @@ class _TopTabBarState extends State<AppTab>
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text(
-                          'Top-rated games',
+                          'Recommended for you',
                           style: TextStyle(
-                              fontWeight: FontWeight.w900, fontSize: 20),
+                              fontWeight: FontWeight.w600, fontSize: 20),
                         ),
                         Align(
                           alignment: Alignment.centerRight,

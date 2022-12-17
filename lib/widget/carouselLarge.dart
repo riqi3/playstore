@@ -1,14 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-class carousel extends StatefulWidget {
-  const carousel({super.key});
+class carouselLarge extends StatefulWidget {
+  const carouselLarge({super.key});
 
   @override
-  State<carousel> createState() => _carouselState();
+  State<carouselLarge> createState() => _carouselLargeState();
 }
 
-class _carouselState extends State<carousel> {
+class _carouselLargeState extends State<carouselLarge> {
   List<String> title = [
     'Asphalt Nitro aaaa aa aa aaaaa',
     'Plants vs. Zombies',
@@ -47,11 +47,11 @@ class _carouselState extends State<carousel> {
       ),
       CarouselSlider(
         options: CarouselOptions(
-          height: 300,
+          height: 350,
           padEnds: false,
           pageSnapping: true,
           
-          viewportFraction: .7,
+          viewportFraction: .9,
           enableInfiniteScroll: false,
           disableCenter: true,
           initialPage: 0,
