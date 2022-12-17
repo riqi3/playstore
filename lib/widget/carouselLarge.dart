@@ -9,6 +9,7 @@ class carouselLarge extends StatefulWidget {
 }
 
 class _carouselLargeState extends State<carouselLarge> {
+
   List<String> title = [
     'Asphalt Nitro aaaa aa aa aaaaa',
     'Plants vs. Zombies',
