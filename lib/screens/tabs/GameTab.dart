@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:playstore/constants/colors.dart';
+import 'package:playstore/widget/carouselCategory.dart';
 import 'package:playstore/widget/carouselLarge.dart';
 
 import '../../widget/carousel.dart';
@@ -201,7 +202,7 @@ class _TopTabBarState extends State<GameTab>
                 ],
               ),
             ),
-            Text('top charts'),
+            TopChartCarousel(),
             Text('kids'),
             Text('premium'),
             Text('categories'),
