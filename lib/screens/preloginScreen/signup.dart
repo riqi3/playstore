@@ -18,6 +18,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
         child: Center(
           child: Column(
             children: [

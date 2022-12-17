@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:playstore/constants/colors.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class ForgotPass extends StatefulWidget {
+  const ForgotPass({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<ForgotPass> createState() => _ForgotPass();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _ForgotPass extends State<ForgotPass> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
         child: Center(
           child: Column(
             children: [

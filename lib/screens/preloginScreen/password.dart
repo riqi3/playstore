@@ -19,6 +19,7 @@ class _PasswordScreen extends State<PasswordScreen> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
         child: Center(
           child: Column(
             children: [
