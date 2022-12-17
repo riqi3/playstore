@@ -10,33 +10,35 @@ class carousel extends StatefulWidget {
 
 class _carouselState extends State<carousel> {
   List<String> title = [
-    'Asphalt Nitro aaaa aa aa aaaaa',
+    'Candy Crush Saga',
     'Plants vs. Zombies',
-    'Shadow Fight 3',
+    'Clash of Clans',
   ];
 
   List<String> category = [
-    'Racing',
+    'Puzzle',
     'Strategy',
-    'Role Playing',
+    'Strategy',
   ];
 
   List<String> type = [
-    'Car',
+    'Match 3',
     'Tactics',
-    'Action',
+    '',
   ];
 
   List<String> imageList = [
-    "https://images.unsplash.com/photo-1670811456186-e73d0ace9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1671067039708-6e192b9811aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1175&q=80",
-    "https://images.unsplash.com/photo-1661961110671-77b71b929d52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    
+    "assets/games/cc/cc-cover.png",
+    "assets/games/pvz/pvz-cover.png",
+    "assets/games/coc/coc-cover.png",
   ];
 
   List<String> appIcon = [
-    "https://images.unsplash.com/photo-1618352357270-ef40d25bcef8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-    "https://images.unsplash.com/photo-1621342261924-3e2f6c9603f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-    "https://images.unsplash.com/photo-1633467067670-30701ff2dcbd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+        "assets/games/cc/cc-profile.png",
+    "assets/games/pvz/pvz-profile.png",
+
+    "assets/games/coc/coc-profile.jpg",
   ];
 
   @override
@@ -68,7 +70,7 @@ class _carouselState extends State<carousel> {
                     borderRadius: BorderRadius.circular(10), // Image border
                     child: SizedBox.fromSize(
                       // Image radius
-                      child: Image.network(
+                      child: Image.asset(
                         i,
                         fit: BoxFit.fitHeight,
                       ),
@@ -78,7 +80,7 @@ class _carouselState extends State<carousel> {
                     height: 10,
                   ),
                   if (i ==
-                      'https://images.unsplash.com/photo-1670811456186-e73d0ace9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+                      'assets/games/cc/cc-cover.png')
                     Container(
                       child: Row(
                         children: [
@@ -88,7 +90,7 @@ class _carouselState extends State<carousel> {
                                   BorderRadius.circular(10), // Image border
                               child: SizedBox.fromSize(
                                 size: Size.fromRadius(40), // Image radius
-                                child: Image.network(
+                                child: Image.asset(
                                   "${appIcon[0]}",
                                   fit: BoxFit.cover,
                                 ),
@@ -165,7 +167,7 @@ class _carouselState extends State<carousel> {
                       ),
                     ),
                   if (i ==
-                      'https://images.unsplash.com/photo-1671067039708-6e192b9811aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1175&q=80')
+                      'assets/games/pvz/pvz-cover.png')
                     Container(
                       child: Row(
                         children: [
@@ -175,7 +177,7 @@ class _carouselState extends State<carousel> {
                                   BorderRadius.circular(10), // Image border
                               child: SizedBox.fromSize(
                                 size: Size.fromRadius(40), // Image radius
-                                child: Image.network(
+                                child: Image.asset(
                                   "${appIcon[1]}",
                                   fit: BoxFit.cover,
                                 ),
@@ -251,7 +253,7 @@ class _carouselState extends State<carousel> {
                       ),
                     ),
                   if (i ==
-                      'https://images.unsplash.com/photo-1661961110671-77b71b929d52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+                      'assets/games/coc/coc-cover.png')
                     Container(
                       child: Row(
                         children: [
@@ -261,7 +263,7 @@ class _carouselState extends State<carousel> {
                                   BorderRadius.circular(10), // Image border
                               child: SizedBox.fromSize(
                                 size: Size.fromRadius(40), // Image radius
-                                child: Image.network(
+                                child: Image.asset(
                                   "${appIcon[2]}",
                                   fit: BoxFit.cover,
                                 ),
@@ -275,7 +277,9 @@ class _carouselState extends State<carousel> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Container(
-                                    child: Text(
+                                    child: Row(
+                                      children: [
+                                       Text(
                                       "${title[2]}",
                                       maxLines: 1,
                                       softWrap: true,
@@ -285,6 +289,7 @@ class _carouselState extends State<carousel> {
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
+                                    ],),
                                   ),
                                   SizedBox(
                                     height: 8,
@@ -295,14 +300,14 @@ class _carouselState extends State<carousel> {
                                         Text(
                                           "${category[2]}",
                                         ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 8.0, right: 8.0),
-                                          child: Text('•'),
-                                        ),
-                                        Text(
-                                          "${type[1]}",
-                                        ),
+                                        // Padding(
+                                        //   padding: const EdgeInsets.only(
+                                        //       left: 8.0, right: 8.0),
+                                        //   child: Text('•'),
+                                        // ),
+                                        // Text(
+                                        //   "${type[2]}",
+                                        // ),
                                       ],
                                     ),
                                   ),
