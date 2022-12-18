@@ -40,12 +40,56 @@ class _TopTabBarState extends State<GameTab>
               backgroundColor: Colors.white,
               pinned: true,
               floating: true,
-              title: Row(
-                children: [
-                  const Text('s'),
-                  Expanded(child: Container()),
-                  const Icon(Icons.search),
-                ],
+              title: Container(
+                decoration: BoxDecoration(
+                  color: bg,
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: new Container(
+                          child: Icon(
+                            Icons.search,
+                            color: grey1,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: new Container(
+                          child: Text(
+                            'Search for apps & games',
+                            style: TextStyle(
+                                color: grey1, fontWeight: FontWeight.w400),
+                          ),
+                        ),
+                      ),
+                      Flexible(fit: FlexFit.tight, child: SizedBox()),
+                      Container(
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                  padding: const EdgeInsets.only(right: 18.0),
+                                  child: GestureDetector(
+                                    onTap: (){
+                                      lightbox();
+                                    },
+                                    child: CircleAvatar(
+                                    backgroundColor: Colors.brown.shade800,
+                                    child: const Text('EE'),
+                                  ),
+                                  )),
+                            ]),
+                      ),
+                    ],
+                  ),
+                ),
               ),
               bottom: TabBar(
                 isScrollable: true,
@@ -167,7 +211,7 @@ class _TopTabBarState extends State<GameTab>
                       ],
                     ),
                   ),
-                   //NEW & UPDATED GAMES
+                  //NEW & UPDATED GAMES
                   Container(
                     child: Column(
                       children: [
@@ -211,7 +255,6 @@ class _TopTabBarState extends State<GameTab>
                 ],
               ),
             ),
-            
             Text('kids'),
             Text('premium'),
             Text('categories'),
@@ -220,4 +263,22 @@ class _TopTabBarState extends State<GameTab>
       ),
     );
   }
+}
+
+
+Container lightbox(){
+  return Container(
+          width: 320.0,
+          height: 180.0,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage("https://images.unsplash.com/photo-1671275422160-a28a214effe3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"),
+              fit: BoxFit.cover,
+               colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(0.2),
+                BlendMode.darken
+               ),
+           ),
+         ),
+  );
 }

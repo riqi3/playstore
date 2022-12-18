@@ -37,12 +37,51 @@ class _TopTabBarState extends State<AppTab>
               backgroundColor: Colors.white,
               pinned: true,
               floating: true,
-              title: Row(
-                children: [
-                  const Text('s'),
-                  Expanded(child: Container()),
-                  const Icon(Icons.search),
-                ],
+              title: Container(
+                decoration: BoxDecoration(
+                  color: bg,
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: new Container(
+                          child: Icon(
+                            Icons.search,
+                            color: grey1,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: new Container(
+                          child: Text(
+                            'Search for apps & games',
+                            style: TextStyle(
+                                color: grey1, fontWeight: FontWeight.w400),
+                          ),
+                        ),
+                      ),
+                      Flexible(fit: FlexFit.tight, child: SizedBox()),
+                      Container(
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                  padding: const EdgeInsets.only(right: 18.0),
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.brown.shade800,
+                                    child: const Text('EE'),
+                                  )),
+                            ]),
+                      ),
+                    ],
+                  ),
+                ),
               ),
               bottom: TabBar(
                 isScrollable: true,
@@ -75,7 +114,7 @@ class _TopTabBarState extends State<AppTab>
         body: TabBarView(
           controller: _tabController,
           children: <Widget>[
-             Container(
+            Container(
               width: 500,
               child: ListView(
                 children: [
@@ -116,3 +155,5 @@ class _TopTabBarState extends State<AppTab>
     );
   }
 }
+
+
