@@ -73,6 +73,28 @@ flutter:
     - assets/games/cc/cc-cover.png
     - assets/games/coc/coc-profile.jpg
     - assets/games/coc/coc-cover.png
+    - assets/games/ml/ml-profile.png
+    - assets/games/ml/ml-cover.png
+    - assets/games/rbx/rbx-profile.png
+    - assets/games/rbx/rbx-cover.png
+
+    - assets/icons/icon-action.png
+    - assets/icons/icon-adventure.png
+    - assets/icons/icon-arcade.png
+    - assets/icons/icon-board.png
+    - assets/icons/icon-card.png
+    - assets/icons/icon-casino.png
+    - assets/icons/icon-casual.png
+    - assets/icons/icon-educational.png
+    - assets/icons/icon-music.png
+    - assets/icons/icon-puzzle.png
+    - assets/icons/icon-racing.png
+    - assets/icons/icon-roleplaying.png
+    - assets/icons/icon-simulation.png
+    - assets/icons/icon-sports.png
+    - assets/icons/icon-strategy.png
+    - assets/icons/icon-trivia.png
+    - assets/icons/icon-word.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
