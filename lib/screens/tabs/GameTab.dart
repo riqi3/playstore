@@ -4,6 +4,7 @@ import 'package:playstore/widget/carouselCategory.dart';
 import 'package:playstore/widget/carouselLarge.dart';
 
 import '../../widget/carousel.dart';
+import '../../widget/listGames.dart';
 
 class GameTab extends StatefulWidget {
   const GameTab({super.key});
@@ -202,7 +203,15 @@ class _TopTabBarState extends State<GameTab>
                 ],
               ),
             ),
-            TopChartCarousel(),
+            Container(
+              child: ListView(
+                children: [
+                  TopChartCarousel(),
+                  TopGames(),
+                ],
+              ),
+            ),
+            
             Text('kids'),
             Text('premium'),
             Text('categories'),

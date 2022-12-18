@@ -5,7 +5,9 @@ import 'package:playstore/screens/preloginScreen/signup.dart';
 import 'screens/preloginScreen/signup.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp(
+    
+  ));
 }
 
 class MyApp extends StatelessWidget {
