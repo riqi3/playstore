@@ -118,23 +118,7 @@ class _TopTabBarState extends State<AppTab>
               width: 500,
               child: ListView(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(
-                          'Recommended for you',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600, fontSize: 20),
-                        ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Icon(Icons.arrow_forward_rounded),
-                        ),
-                      ],
-                    ),
-                  ),
+                  recommendedSection(),
                   Container(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -151,6 +135,33 @@ class _TopTabBarState extends State<AppTab>
             Text('categories'),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class recommendedSection extends StatelessWidget {
+  const recommendedSection({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20.0, right: 25.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Text(
+            'Recommended for you',
+            style: TextStyle(
+                fontWeight: FontWeight.w600, fontSize: 20),
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: Icon(Icons.arrow_forward_rounded),
+          ),
+        ],
       ),
     );
   }

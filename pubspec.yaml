@@ -77,6 +77,14 @@ flutter:
     - assets/games/ml/ml-cover.png
     - assets/games/rbx/rbx-profile.png
     - assets/games/rbx/rbx-cover.png
+    - assets/games/chss/chss-profile.png
+    - assets/games/chss/chss-cover.png
+
+    - assets/games/kids/ytk/ytk-profile.png
+    - assets/games/kids/cg/cg-profile.png
+    - assets/games/kids/kgt/kgt-profile.png
+    - assets/games/kids/sp/sp-profile.png
+    - assets/games/kids/mt/mt-profile.png
 
     - assets/icons/icon-action.png
     - assets/icons/icon-adventure.png
@@ -95,6 +103,8 @@ flutter:
     - assets/icons/icon-strategy.png
     - assets/icons/icon-trivia.png
     - assets/icons/icon-word.png
+
+    - assets/kids.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

@@ -9,35 +9,34 @@ class carouselLarge extends StatefulWidget {
 }
 
 class _carouselLargeState extends State<carouselLarge> {
-
   List<String> title = [
-    'Asphalt Nitro aaaa aa aa aaaaa',
-    'Plants vs. Zombies',
-    'Shadow Fight 3',
+    'Roblox',
+    'Mobile Legends: Bang Bang',
+    'Chess',
   ];
 
   List<String> category = [
-    'Racing',
-    'Strategy',
-    'Role Playing',
+    'Adventure',
+    'Action',
+    'Board',
   ];
 
   List<String> type = [
-    'Car',
-    'Tactics',
-    'Action',
+    'Simulation',
+    'Strategy',
+    'Casual',
   ];
 
   List<String> imageList = [
-    "https://images.unsplash.com/photo-1670811456186-e73d0ace9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1671067039708-6e192b9811aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1175&q=80",
-    "https://images.unsplash.com/photo-1661961110671-77b71b929d52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "assets/games/rbx/rbx-cover.png",
+    "assets/games/ml/ml-cover.png",
+    "assets/games/chss/chss-cover.png",
   ];
 
   List<String> appIcon = [
-    "https://images.unsplash.com/photo-1618352357270-ef40d25bcef8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-    "https://images.unsplash.com/photo-1621342261924-3e2f6c9603f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-    "https://images.unsplash.com/photo-1633467067670-30701ff2dcbd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+    "assets/games/rbx/rbx-profile.png",
+    "assets/games/ml/ml-profile.png",
+    "assets/games/chss/chss-profile.png",
   ];
 
   @override
@@ -51,7 +50,6 @@ class _carouselLargeState extends State<carouselLarge> {
           height: 350,
           padEnds: false,
           pageSnapping: true,
-          
           viewportFraction: .9,
           enableInfiniteScroll: false,
           disableCenter: true,
@@ -69,7 +67,7 @@ class _carouselLargeState extends State<carouselLarge> {
                     borderRadius: BorderRadius.circular(10), // Image border
                     child: SizedBox.fromSize(
                       // Image radius
-                      child: Image.network(
+                      child: Image.asset(
                         i,
                         fit: BoxFit.fitHeight,
                       ),
@@ -78,8 +76,7 @@ class _carouselLargeState extends State<carouselLarge> {
                   SizedBox(
                     height: 10,
                   ),
-                  if (i ==
-                      'https://images.unsplash.com/photo-1670811456186-e73d0ace9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+                  if (i == 'assets/games/rbx/rbx-cover.png')
                     Container(
                       child: Row(
                         children: [
@@ -89,7 +86,7 @@ class _carouselLargeState extends State<carouselLarge> {
                                   BorderRadius.circular(10), // Image border
                               child: SizedBox.fromSize(
                                 size: Size.fromRadius(40), // Image radius
-                                child: Image.network(
+                                child: Image.asset(
                                   "${appIcon[0]}",
                                   fit: BoxFit.cover,
                                 ),
@@ -103,17 +100,20 @@ class _carouselLargeState extends State<carouselLarge> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Container(
-                                    child: Text(
-                                      "${title[0]}",
-                                      maxLines: 1,
-                                      softWrap: true,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500,
+                                      child: Row(
+                                    children: [
+                                      Text(
+                                        "${title[0]}",
+                                        maxLines: 1,
+                                        softWrap: true,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w500,
+                                        ),
                                       ),
-                                    ),
-                                  ),
+                                    ],
+                                  )),
                                   SizedBox(
                                     height: 8,
                                   ),
@@ -165,8 +165,7 @@ class _carouselLargeState extends State<carouselLarge> {
                         ],
                       ),
                     ),
-                  if (i ==
-                      'https://images.unsplash.com/photo-1671067039708-6e192b9811aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1175&q=80')
+                  if (i == 'assets/games/ml/ml-cover.png')
                     Container(
                       child: Row(
                         children: [
@@ -176,7 +175,7 @@ class _carouselLargeState extends State<carouselLarge> {
                                   BorderRadius.circular(10), // Image border
                               child: SizedBox.fromSize(
                                 size: Size.fromRadius(40), // Image radius
-                                child: Image.network(
+                                child: Image.asset(
                                   "${appIcon[1]}",
                                   fit: BoxFit.cover,
                                 ),
@@ -251,8 +250,7 @@ class _carouselLargeState extends State<carouselLarge> {
                         ],
                       ),
                     ),
-                  if (i ==
-                      'https://images.unsplash.com/photo-1661961110671-77b71b929d52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+                  if (i == 'assets/games/chss/chss-cover.png')
                     Container(
                       child: Row(
                         children: [
@@ -262,7 +260,7 @@ class _carouselLargeState extends State<carouselLarge> {
                                   BorderRadius.circular(10), // Image border
                               child: SizedBox.fromSize(
                                 size: Size.fromRadius(40), // Image radius
-                                child: Image.network(
+                                child: Image.asset(
                                   "${appIcon[2]}",
                                   fit: BoxFit.cover,
                                 ),
@@ -276,15 +274,19 @@ class _carouselLargeState extends State<carouselLarge> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Container(
-                                    child: Text(
-                                      "${title[2]}",
-                                      maxLines: 1,
-                                      softWrap: true,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500,
-                                      ),
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          "${title[2]}",
+                                          maxLines: 1,
+                                          softWrap: true,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                   SizedBox(
