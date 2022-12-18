@@ -9,3 +9,4 @@ const Color grey3 = Color.fromARGB(255, 120, 122, 130);
 const Color highlight = Color (0xFF0e56d4);
 const Color topChart = Color (0xFFd8e8e3);
 const Color topChart2 = Color.fromARGB(255, 87, 127, 114);
+const Color bg = Color(0xFFeaeef8);

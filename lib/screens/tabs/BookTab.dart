@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:playstore/constants/colors.dart';
+import 'package:playstore/constants/colors.dart';
 
 class BookTab extends StatefulWidget {
   const BookTab({super.key});
@@ -32,37 +33,55 @@ class _TopTabBarState extends State<BookTab>
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
-              backgroundColor: Color.fromARGB(255, 167, 75, 75),
+              backgroundColor: Colors.white,
               pinned: true,
               floating: true,
-              title:Row(
-                  children: [
-                    Row(
-                      children: <Widget> [
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Row(
-                            
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: new Container(
-                                  child: Icon(Icons.search),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: new Container(
-                                  child: Text('Search Books', style: TextStyle(color: Colors.black87),),
-                                ),
-                              ),
-                            ],
+              title: Container(
+                decoration: BoxDecoration(
+                  color: bg,
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: new Container(
+                          child: Icon(
+                            Icons.search,
+                            color: grey1,
                           ),
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: new Container(
+                          child: Text(
+                            'Search Books',
+                            style: TextStyle(
+                                color: grey1, fontWeight: FontWeight.w400),
+                          ),
+                        ),
+                      ),
+                      Flexible(fit: FlexFit.tight, child: SizedBox()),
+                      Container(
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                  padding: const EdgeInsets.only(right: 18.0),
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.brown.shade800,
+                                    child: const Text('EE'),
+                                  )),
+                            ]),
+                      ),
+                    ],
+                  ),
                 ),
+              ),
               bottom: TabBar(
                 isScrollable: true,
                 labelPadding: EdgeInsets.only(left: 25, right: 25),
@@ -104,8 +123,8 @@ class _TopTabBarState extends State<BookTab>
             Text('audiobooks'),
             Text('genres'),
             Text('top selling'),
-             Text('new releases'),
-              Text('top free'),
+            Text('new releases'),
+            Text('top free'),
           ],
         ),
       ),
