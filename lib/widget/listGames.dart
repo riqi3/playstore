@@ -15,6 +15,7 @@ class _TopGamesState extends State<TopGames> {
     'Clash of Clans',
     'Roblox',
     'Mobile Legends: Bang Bang',
+    'Chess'
   ];
 
   List<String> category = [
@@ -22,7 +23,8 @@ class _TopGamesState extends State<TopGames> {
     'Strategy',
     'Strategy',
     'Adventure',
-    'Action'
+    'Action',
+    'Board'
   ];
 
   List<String> type = [
@@ -30,6 +32,7 @@ class _TopGamesState extends State<TopGames> {
     'Tactics',
     ' ',
     'Simulation',
+    'Strategy',
     'Strategy'
   ];
 
@@ -39,6 +42,7 @@ class _TopGamesState extends State<TopGames> {
     "assets/games/coc/coc-profile.jpg",
     'assets/games/rbx/rbx-profile.png',
     'assets/games/ml/ml-profile.png',
+    'assets/games/chss/chss-profile.png',
   ];
 
   double fontSizeTitle = 15;
@@ -46,6 +50,7 @@ class _TopGamesState extends State<TopGames> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.white,
       child: Padding(
         padding:
             const EdgeInsets.only(left: 25.0, right: 25.0, bottom: 10, top: 20),
@@ -527,6 +532,104 @@ class _TopGamesState extends State<TopGames> {
                         ),
                       ],
                     ),
+
+
+
+                    SizedBox(
+                      height: 20,
+                    ),
+//LIST GAMES 6
+
+                    Row(
+                      children: [
+                        Text('6'),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        ClipRRect(
+                          borderRadius:
+                              BorderRadius.circular(10), // Image border
+                          child: SizedBox.fromSize(
+                            size: Size.fromRadius(30), // Image radius
+                            child: Image.asset(
+                              "${appIcon[5]}",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Text(
+                                      "${title[5]}",
+                                      maxLines: 1,
+                                      softWrap: true,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        fontSize: fontSizeTitle,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 8,
+                                ),
+                                Container(
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        "${category[5]}",
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                            left: 8.0, right: 8.0),
+                                            child: Text('•'),
+                                      ),
+                                      
+                                      Text(
+                                        "${type[5]}",
+                                        overflow: TextOverflow.clip,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 8,
+                                ),
+                                Container(
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              right: 10.0),
+                                          child: Row(children: [
+                                            _rating(),
+                                            Icon(
+                                              Icons.star,
+                                              size: 13,
+                                            ),
+                                          ]),
+                                        ),
+                                      ),
+                                      _appSize(),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+
+
 
 
 
