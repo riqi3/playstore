@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:playstore/constants/colors.dart';
+import 'package:playstore/screens/tabs/GameTab.dart';
 import 'package:playstore/widget/carouselApp.dart';
+import 'package:playstore/widget/carouselAppKids.dart';
+import 'package:playstore/widget/categoryAge.dart';
 
 class AppTab extends StatefulWidget {
   const AppTab({super.key});
@@ -131,7 +134,21 @@ class _TopTabBarState extends State<AppTab>
               ),
             ),
             Text('top charts'),
-            Text('kids'),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+              child: ListView(
+                children: [
+                  // HERO SECTION KID
+                  heroKidSection(),
+                  // FILTER TAB CAROUSEL
+                  AgeCategory(),
+                  //APP RECOMMENDATIONS
+                  carouselAppKids(),
+                ],
+              ),
+            ),
             Text('categories'),
           ],
         ),
@@ -153,7 +170,7 @@ class recommendedSection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Text(
-            'Recommended for you',
+            'Popular apps',
             style: TextStyle(
                 fontWeight: FontWeight.w600, fontSize: 20),
           ),

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:playstore/constants/colors.dart';
@@ -11,19 +13,19 @@ class carouselApp extends StatefulWidget {
 
 class _carouselAppState extends State<carouselApp> {
   List<String> appIcon = [
-    "https://images.unsplash.com/photo-1618352357270-ef40d25bcef8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-    "https://images.unsplash.com/photo-1621342261924-3e2f6c9603f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-    "https://images.unsplash.com/photo-1633467067670-30701ff2dcbd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-    "https://images.unsplash.com/photo-1593799723560-499b89c0397c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-    "https://images.unsplash.com/photo-1650366616718-96c4a566e4d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+    'assets/apps/for you/fb/fb-profile.png',
+    'assets/apps/for you/ig/ig-profile.png',
+    'assets/apps/for you/sp/sp-profile.png',
+    'assets/apps/for you/tw/tw-profile.png',
+    'assets/apps/for you/nx/nx-profile.png',
   ];
 
   List<String> title = [
-    'Google ',
-    'Google Meet',
-    'Google Assistant',
-    'Google Classroom',
-    'Google Chrome: Fast & Secure'
+    'Facebook',
+    'Instagram',
+    'Spotify',
+    'Twitter',
+    'Netflix'
   ];
 
   @override
@@ -51,7 +53,7 @@ class _carouselAppState extends State<carouselApp> {
                     borderRadius: BorderRadius.circular(10), // Image border
                     child: SizedBox.fromSize(
                       // Image radius
-                      child: Image.network(
+                      child: Image.asset(
                         i,
                         fit: BoxFit.fitHeight,
                       ),
@@ -63,7 +65,7 @@ class _carouselAppState extends State<carouselApp> {
                   //first row: recommended for you
                   //first row: first app
                   if (i ==
-                      'https://images.unsplash.com/photo-1618352357270-ef40d25bcef8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80')
+                      'assets/apps/for you/fb/fb-profile.png')
                     Container(
                       child: Row(
                         children: [
@@ -97,7 +99,7 @@ class _carouselAppState extends State<carouselApp> {
                                             padding: const EdgeInsets.only(
                                                 right: 10.0),
                                             child: Row(children: [
-                                              Text('4.5'),
+                                              _rating(),
                                               Icon(
                                                 Icons.star,
                                                 size: 13,
@@ -117,7 +119,7 @@ class _carouselAppState extends State<carouselApp> {
                     ),
                     //first row: second app
                   if (i ==
-                      'https://images.unsplash.com/photo-1621342261924-3e2f6c9603f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80')
+                      'assets/apps/for you/ig/ig-profile.png')
                     Container(
                       child: Row(
                         children: [
@@ -151,7 +153,7 @@ class _carouselAppState extends State<carouselApp> {
                                             padding: const EdgeInsets.only(
                                                 right: 10.0),
                                             child: Row(children: [
-                                              Text('4.7'),
+                                              _rating(),
                                               Icon(
                                                 Icons.star,
                                                 size: 13,
@@ -171,7 +173,7 @@ class _carouselAppState extends State<carouselApp> {
                     ),
 //first row: third app
                   if (i ==
-                      'https://images.unsplash.com/photo-1633467067670-30701ff2dcbd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80')
+                      'assets/apps/for you/sp/sp-profile.png')
                     Container(
                       child: Row(
                         children: [
@@ -205,7 +207,7 @@ class _carouselAppState extends State<carouselApp> {
                                             padding: const EdgeInsets.only(
                                                 right: 10.0),
                                             child: Row(children: [
-                                              Text('4.4'),
+                                              _rating(),
                                               Icon(
                                                 Icons.star,
                                                 size: 13,
@@ -225,7 +227,7 @@ class _carouselAppState extends State<carouselApp> {
                     ),
                     //first row: fourth app
                   if (i ==
-                      'https://images.unsplash.com/photo-1593799723560-499b89c0397c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80')
+                      'assets/apps/for you/tw/tw-profile.png')
                     Container(
                       child: Row(
                         children: [
@@ -259,7 +261,7 @@ class _carouselAppState extends State<carouselApp> {
                                             padding: const EdgeInsets.only(
                                                 right: 10.0),
                                             child: Row(children: [
-                                              Text('4.9'),
+                                              _rating(),
                                               Icon(
                                                 Icons.star,
                                                 size: 13,
@@ -279,7 +281,7 @@ class _carouselAppState extends State<carouselApp> {
                     ),
                     //first row: third app
                   if (i ==
-                      'https://images.unsplash.com/photo-1650366616718-96c4a566e4d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80')
+                      'assets/apps/for you/nx/nx-profile.png')
                     Container(
                       child: Row(
                         children: [
@@ -313,7 +315,7 @@ class _carouselAppState extends State<carouselApp> {
                                             padding: const EdgeInsets.only(
                                                 right: 10.0),
                                             child: Row(children: [
-                                              Text('4.6'),
+                                              _rating(),
                                               Icon(
                                                 Icons.star,
                                                 size: 13,
@@ -339,4 +341,15 @@ class _carouselAppState extends State<carouselApp> {
       ),
     ]);
   }
+}
+
+
+Text _rating() {
+  Random random = new Random();
+  double randomNumber = random.nextDouble() * 5;
+  randomNumber = double.parse(randomNumber.toStringAsFixed(1));
+  if (randomNumber <= 0.9){
+    return Text('1.0');
+  }
+  return Text('${randomNumber}');
 }
