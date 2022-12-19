@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:playstore/constants/colors.dart';
+import 'package:playstore/screens/preloginScreen/forgotemail.dart';
 import 'package:playstore/screens/preloginScreen/password.dart';
 
 import '../Homepage.dart';
@@ -92,25 +93,35 @@ class _SignUpScreenState extends State<SignUpScreen> {
                Row(
                 mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text('           Forgot email?', 
-                style: TextStyle(
-                  color: Colors.lightBlueAccent,
-                  fontWeight: FontWeight.bold
-                  )),
+                   TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ForgotEmail()));
+                      }, child: const Text("       Forgot email?",
+                     style: TextStyle(
+                  color: Colors.blueAccent,
+                  fontSize: 15,
+                ), 
+                )),
               ]
              ),
              SizedBox(height: 50),
              Row(
                 mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text('           Create Account', 
-                style: TextStyle(
-                  color: Colors.lightBlueAccent,
-                  fontWeight: FontWeight.bold
-                  )),
+                TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ForgotEmail()));
+                      }, child: const Text("       Create account",
+                     style: TextStyle(
+                  color: Colors.blueAccent,
+                  fontSize: 15,
+                ), 
+                )),
               ]
              ),
-              SizedBox(height: 100),
+              SizedBox(height: 160),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 30.0,
@@ -121,9 +132,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                      padding: EdgeInsets.all(25),
+                      padding: EdgeInsets.all(5),
                       decoration: BoxDecoration(
-                        color: Colors.lightBlueAccent,
+                        color: Color.fromARGB(255, 89, 99, 115),
                         borderRadius: BorderRadius.circular(5),
 
                         ),

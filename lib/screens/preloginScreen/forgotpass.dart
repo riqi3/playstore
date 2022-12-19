@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:playstore/constants/colors.dart';
+import 'package:playstore/screens/preloginScreen/signup.dart';
 
 class ForgotPass extends StatefulWidget {
   const ForgotPass({super.key});
@@ -33,21 +34,22 @@ class _ForgotPass extends State<ForgotPass> {
                   "Account recovery",
                 style: TextStyle(
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
               ),
               SizedBox(height: 5),
 
-                  Text(
-                  "To help your account safe, Google wants to make sure it's really you trying to sign in",
+                  Center(
+                    child: Text(
+                    "      To help your account safe, Google\n wants to make sure it's really you trying to\n                            sign in",
                 style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 15,
+                    color: Colors.grey,
+                    fontSize: 15,
                 ), 
               ),
+                  ),
 
-              SizedBox(height: 5),
+              SizedBox(height: 7),
 
                   Text(
                   "anonymous@gmail.com",
@@ -77,17 +79,17 @@ class _ForgotPass extends State<ForgotPass> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                  "        To get a verification code, first confirm the recovery email address you added to your account ear***********@yahoo.com",
+                  "        To get a verification code, first confirm the\n        recovery email address you added to your account\n        ear***********@yahoo.com",
+                
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.grey,
                   fontSize: 15,
-                  fontWeight: FontWeight.bold
                 ), 
               ),
                 ],),
               SizedBox(height: 30),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 35.0),
+                padding: const EdgeInsets.symmetric(horizontal: 30.0),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.black,
@@ -115,36 +117,42 @@ class _ForgotPass extends State<ForgotPass> {
              Row(
                 mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text('           Try another way', 
+                Text('        Try another way', 
                 style: TextStyle(
                   color: Colors.lightBlueAccent,
                   fontWeight: FontWeight.bold
                   )),
               ]
              ),
-              SizedBox(height: 100),
+              SizedBox(height: 35),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 185.0,
-                  vertical: 260.0,
+                  horizontal: 30.0,
+                  vertical: 140.0,
                   
                   ),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                      padding: EdgeInsets.all(25),
+                      padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                         borderRadius: BorderRadius.circular(5),
                         ),
+                      child: MaterialButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const SignUpScreen()));
+                  },
                       child: Center(
                         child: Text(
-                          'Next',
+                          'Send',
                           style: TextStyle(color: Colors.black),
                           
                         ),
                       ),
+                    ),
                     ),
                   ],
                 ),
