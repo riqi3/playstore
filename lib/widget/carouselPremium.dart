@@ -14,36 +14,34 @@ class carouselPremium extends StatefulWidget {
 
 class _carouselPremiumState extends State<carouselPremium> {
   List<String> appIcon = [
-    'assets/games/kids/ytk/ytk-profile.png',
-    'assets/games/kids/cg/cg-profile.png',
-    'assets/games/kids/kgt/kgt-profile.png',
-    'assets/games/kids/sp/sp-profile.png',
-    'assets/games/kids/mt/mt-profile.png',
+    'assets/games/premium/mc/mc-profile.png',
+    'assets/games/premium/te/te-profile.png',
+    'assets/games/premium/stv/stv-profile.png',
+    'assets/games/premium/gta/gta-profile.png',
+    'assets/games/premium/ds/ds-profile.png',
   ];
 
   List<String> title = [
-    'Youtube Kids',
-    'Coloring Games: Color & Paint',
-    'Kids Games: For Toddlers 3-5',
-    'Spelling & Phonics: Kids Games',
-    'Monster Truck Games for Kids'
+    'Minecraft',
+    'Terraria',
+    'Stardew Valley',
+    'Grand Theft Auto: Vice City',
+    'Don''t Starve: Pocket Edition',
   ];
-
-
-
+  
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
       // Padding(
       //   padding: const EdgeInsets.only(top: 30.0),
-        recommendedSection(),
+        // sectionTitle1(),
       // ),
       SizedBox(
         height: 20,
       ),
       CarouselSlider(
         options: CarouselOptions(
-          height: 250,
+          height: 190,
           padEnds: false,
           viewportFraction: .3,
           pageSnapping: true,
@@ -72,7 +70,7 @@ class _carouselPremiumState extends State<carouselPremium> {
                   //first row: recommended for you
                   //first row: first app
                   if (i ==
-                      'assets/games/kids/ytk/ytk-profile.png')
+                      'assets/games/premium/mc/mc-profile.png')
                     Container(
                       child: Row(
                         children: [
@@ -111,6 +109,10 @@ class _carouselPremiumState extends State<carouselPremium> {
                                                 Icons.star,
                                                 size: 13,
                                               ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(left:3.0),
+                                                child: _price(),
+                                              ),
                                             ]),
                                           ),
                                         ),
@@ -126,7 +128,7 @@ class _carouselPremiumState extends State<carouselPremium> {
                     ),
                     //first row: second app
                   if (i ==
-                      'assets/games/kids/cg/cg-profile.png')
+                      'assets/games/premium/te/te-profile.png')
                     Container(
                       child: Row(
                         children: [
@@ -165,6 +167,10 @@ class _carouselPremiumState extends State<carouselPremium> {
                                                 Icons.star,
                                                 size: 13,
                                               ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(left:3.0),
+                                                child: _price(),
+                                              ),
                                             ]),
                                           ),
                                         ),
@@ -180,7 +186,7 @@ class _carouselPremiumState extends State<carouselPremium> {
                     ),
 //first row: third app
                   if (i ==
-                      'assets/games/kids/kgt/kgt-profile.png')
+                      'assets/games/premium/stv/stv-profile.png')
                     Container(
                       child: Row(
                         children: [
@@ -219,6 +225,10 @@ class _carouselPremiumState extends State<carouselPremium> {
                                                 Icons.star,
                                                 size: 13,
                                               ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(left:3.0),
+                                                child: _price(),
+                                              ),
                                             ]),
                                           ),
                                         ),
@@ -234,7 +244,7 @@ class _carouselPremiumState extends State<carouselPremium> {
                     ),
                     //first row: fourth app
                   if (i ==
-                      'assets/games/kids/sp/sp-profile.png')
+                      'assets/games/premium/gta/gta-profile.png')
                     Container(
                       child: Row(
                         children: [
@@ -273,6 +283,10 @@ class _carouselPremiumState extends State<carouselPremium> {
                                                 Icons.star,
                                                 size: 13,
                                               ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(left:3.0),
+                                                child: _price(),
+                                              ),
                                             ]),
                                           ),
                                         ),
@@ -288,7 +302,7 @@ class _carouselPremiumState extends State<carouselPremium> {
                     ),
                     //first row: third app
                   if (i ==
-                      'assets/games/kids/mt/mt-profile.png')
+                      'assets/games/premium/ds/ds-profile.png')
                     Container(
                       child: Row(
                         children: [
@@ -375,4 +389,89 @@ Text _price() {
     return Text('₱49.00');
   }
   return Text('₱${randomNumber}');
+}
+
+
+// class sectionTitle1 extends StatelessWidget {
+//   const sectionTitle1({
+//     Key? key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     List<String> s_title =[
+//       'Recommended for you',
+//       'Offline games',
+//       'Stylized games',
+//       'Casual games'
+//     ];
+
+//     return Padding(
+//       padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+//       child: Row(
+//         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//         children: <Widget>[
+//           Container(
+//             child: Row(
+//               children: [
+                
+//                 Text(
+//                   '${s_title[1]}',
+//                   style: TextStyle(
+//                       fontWeight: FontWeight.w600, fontSize: 20),
+//                 ),
+//               ],
+//             ),
+//           ),
+//           Align(
+//             alignment: Alignment.centerRight,
+//             child: Icon(Icons.arrow_forward_rounded),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+
+
+class sectionTitle2 extends StatelessWidget {
+  const sectionTitle2({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    List<String> s_title =[
+      'Recommended for you',
+      'Offline games',
+      'Stylized games',
+      'Casual games'
+    ];
+
+    return Padding(
+      padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Container(
+            child: Row(
+              children: [
+                
+                Text(
+                  '${s_title[1]}',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600, fontSize: 20),
+                ),
+              ],
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: Icon(Icons.arrow_forward_rounded),
+          ),
+        ],
+      ),
+    );
+  }
 }

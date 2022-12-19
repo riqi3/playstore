@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:playstore/constants/colors.dart';
 import 'package:playstore/widget/carouselCategory.dart';
 import 'package:playstore/widget/carouselLarge.dart';
 import 'package:playstore/widget/categoryAge.dart';
+import 'package:playstore/widget/listGameCategory.dart';
 
 import '../../widget/carousel.dart';
 import '../../widget/carouselAppKids.dart';
@@ -170,14 +173,15 @@ class _TopTabBarState extends State<GameTab>
             Container(
               child: ListView(
                 children: [
-                  //FILTER TAB CAROUSEL
-                  carouselPremium(),
-                  //TOP GAMES LIST
-                  TopGames(),
+                  //RECOMMENDED FOR YOU
+                  premiumRecommendedSection(),
+                  //RECOMMENDED FOR YOU
+                  premiumOfflineSection(),
+                  
                 ],
               ),
             ),
-            Text('categories'),
+            GameCategory(),
           ],
         ),
       ),
@@ -295,37 +299,7 @@ class suggestedSection extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Container(
-                  child: Row(
-                    children: [
-                      Text('Ads'),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-                        child: Text(
-                          '•',
-                          style: TextStyle(fontSize: 18),
-                        ),
-                      ),
-                      Text(
-                        'Suggested for you',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 20),
-                      ),
-                    ],
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Icon(Icons.arrow_forward_rounded),
-                ),
-              ],
-            ),
-          ),
+          sectionTitle(),
           Container(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -333,6 +307,47 @@ class suggestedSection extends StatelessWidget {
                 carouselLarge(),
               ],
             ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class sectionTitle extends StatelessWidget {
+  const sectionTitle({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Container(
+            child: Row(
+              children: [
+                Text('Ads'),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                  child: Text(
+                    '•',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+                Text(
+                  'Suggested for you',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600, fontSize: 20),
+                ),
+              ],
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: Icon(Icons.arrow_forward_rounded),
           ),
         ],
       ),
@@ -380,6 +395,88 @@ class newsUpdatedSection extends StatelessWidget {
   }
 }
 
+
+class premiumRecommendedSection extends StatelessWidget {
+  const premiumRecommendedSection({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  'Recommended for you',
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Icon(Icons.arrow_forward_rounded),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                carouselPremium(),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class premiumOfflineSection extends StatelessWidget {
+  const premiumOfflineSection({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  'Offline games',
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Icon(Icons.arrow_forward_rounded),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                carouselPremium(),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
 Container lightbox() {
   return Container(
     width: 320.0,
@@ -394,4 +491,15 @@ Container lightbox() {
       ),
     ),
   );
+}
+
+
+Text _rating() {
+  Random random = new Random();
+  double randomNumber = random.nextDouble() * 5;
+  randomNumber = double.parse(randomNumber.toStringAsFixed(1));
+  if (randomNumber <= 0.9) {
+    return Text('1.0');
+  }
+  return Text('${randomNumber}');
 }

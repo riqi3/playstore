@@ -1,5 +1,9 @@
+import 'dart:math';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+
+import '../constants/colors.dart';
 
 class carousel extends StatefulWidget {
   const carousel({super.key});
@@ -28,16 +32,14 @@ class _carouselState extends State<carousel> {
   ];
 
   List<String> imageList = [
-    
     "assets/games/cc/cc-cover.png",
     "assets/games/pvz/pvz-cover.png",
     "assets/games/coc/coc-cover.png",
   ];
 
   List<String> appIcon = [
-        "assets/games/cc/cc-profile.png",
+    "assets/games/cc/cc-profile.png",
     "assets/games/pvz/pvz-profile.png",
-
     "assets/games/coc/coc-profile.jpg",
   ];
 
@@ -52,7 +54,6 @@ class _carouselState extends State<carousel> {
           height: 300,
           padEnds: false,
           pageSnapping: true,
-          
           viewportFraction: .7,
           enableInfiniteScroll: false,
           disableCenter: true,
@@ -79,20 +80,28 @@ class _carouselState extends State<carousel> {
                   SizedBox(
                     height: 10,
                   ),
-                  if (i ==
-                      'assets/games/cc/cc-cover.png')
+                  if (i == 'assets/games/cc/cc-cover.png')
                     Container(
                       child: Row(
                         children: [
-                          Container(
-                            child: ClipRRect(
-                              borderRadius:
-                                  BorderRadius.circular(10), // Image border
-                              child: SizedBox.fromSize(
-                                size: Size.fromRadius(40), // Image radius
-                                child: Image.asset(
-                                  "${appIcon[0]}",
-                                  fit: BoxFit.cover,
+                          GestureDetector(
+                            onTap: () {
+                              _modalTC(context);
+                              print('object');
+                            },
+                            onLongPress: () {
+                              _modalTC(context);
+                            },
+                            child: Container(
+                              child: ClipRRect(
+                                borderRadius:
+                                    BorderRadius.circular(10), // Image border
+                                child: SizedBox.fromSize(
+                                  size: Size.fromRadius(40), // Image radius
+                                  child: Image.asset(
+                                    "${appIcon[0]}",
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -166,8 +175,7 @@ class _carouselState extends State<carousel> {
                         ],
                       ),
                     ),
-                  if (i ==
-                      'assets/games/pvz/pvz-cover.png')
+                  if (i == 'assets/games/pvz/pvz-cover.png')
                     Container(
                       child: Row(
                         children: [
@@ -252,8 +260,7 @@ class _carouselState extends State<carousel> {
                         ],
                       ),
                     ),
-                  if (i ==
-                      'assets/games/coc/coc-cover.png')
+                  if (i == 'assets/games/coc/coc-cover.png')
                     Container(
                       child: Row(
                         children: [
@@ -279,17 +286,18 @@ class _carouselState extends State<carousel> {
                                   Container(
                                     child: Row(
                                       children: [
-                                       Text(
-                                      "${title[2]}",
-                                      maxLines: 1,
-                                      softWrap: true,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500,
-                                      ),
+                                        Text(
+                                          "${title[2]}",
+                                          maxLines: 1,
+                                          softWrap: true,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                    ],),
                                   ),
                                   SizedBox(
                                     height: 8,
@@ -349,4 +357,212 @@ class _carouselState extends State<carousel> {
       ),
     ]);
   }
+}
+
+void _modalTC(BuildContext context) {
+double fontSize = 10;
+
+  List<String> appInfo = [
+    'assets/games/cc/cc-profile',
+    'Candy Crush Saga',
+    'Rated for 3+',
+    'Contains ads •',
+    'In-app purchases',
+  ];
+
+  double font_style = 18;
+
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: Colors.transparent,
+    builder: (context) => Container(
+      height: MediaQuery.of(context).size.height * 0.42,
+      decoration: new BoxDecoration(
+        color: Colors.white,
+        borderRadius: new BorderRadius.only(),
+      ),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(),
+        child: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(0.0),
+              child: Container(
+                child: Column(
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            color: grey2,
+                            width: 1,
+                          ),
+                        ),
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 30.0),
+                            child: Text(
+                              'logo',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w500, fontSize: 30),
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 30.0),
+                                child: Text(
+                                  "${appInfo[1]}",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: fontSize),
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  _rating(),
+                                  Icon(
+                                                Icons.star,
+                                                size: 13,
+                                              ),
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.only(bottom: 30.0),
+                                    child: Text(
+                                      "${appInfo[2]}",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: fontSize),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.only(bottom: 30.0),
+                                    child: Text(
+                                      "${appInfo[3]}",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: fontSize),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.only(bottom: 30.0),
+                                    child: Text(
+                                      "${appInfo[4]}",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: fontSize),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    // Container(
+                    //   width: MediaQuery.of(context).size.width,
+                    //   decoration: BoxDecoration(
+                    //     borderRadius: BorderRadius.only(
+                    //       topRight: Radius.circular(10),
+                    //       topLeft: Radius.circular(10),
+                    //     ),
+                    //     border: Border.all(
+                    //       color: grey2,
+                    //       width: 1,
+                    //     ),
+                    //     color: topChart,
+                    //   ),
+                    //   child: Padding(
+                    //     padding: const EdgeInsets.all(13.0),
+                    //     child: Text(
+                    //       "${tf_title[0]}",
+                    //       style: TextStyle(
+                    //         color: topChart2,
+                    //         fontSize: font_style,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    // Container(
+                    //   width: MediaQuery.of(context).size.width,
+                    //   decoration: BoxDecoration(
+                    //     borderRadius: BorderRadius.only(),
+                    //     border: Border.all(
+                    //       color: grey2,
+                    //       width: 1,
+                    //     ),
+                    //     color: Colors.white,
+                    //   ),
+                    //   child: Padding(
+                    //     padding: const EdgeInsets.all(13.0),
+                    //     child: Text(
+                    //       "${tf_title[1]}",
+                    //       style: TextStyle(
+                    //         color: grey3,
+                    //         fontSize: font_style,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    // Container(
+                    //   width: MediaQuery.of(context).size.width,
+                    //   decoration: BoxDecoration(
+                    //     borderRadius: BorderRadius.only(
+                    //       bottomRight: Radius.circular(10),
+                    //       bottomLeft: Radius.circular(10),
+                    //     ),
+                    //     border: Border.all(
+                    //       color: grey2,
+                    //       width: 1,
+                    //     ),
+                    //     color: Colors.white,
+                    //   ),
+                    //   child: Padding(
+                    //     padding: const EdgeInsets.all(13.0),
+                    //     child: Text(
+                    //       "${tf_title[2]}",
+                    //       style: TextStyle(
+                    //         color: grey3,
+                    //         fontSize: font_style,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+
+
+
+}
+
+
+
+  Text _rating() {
+  Random random = new Random();
+  double randomNumber = random.nextDouble() * 5;
+  randomNumber = double.parse(randomNumber.toStringAsFixed(1));
+  if (randomNumber <= 0.9) {
+    return Text('1.0');
+  }
+  return Text('${randomNumber}');
 }
