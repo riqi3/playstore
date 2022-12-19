@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:playstore/constants/colors.dart';
-import 'package:playstore/screens/preloginScreen/forgotpass.dart';
+import 'package:playstore/screens/preloginScreen/signup.dart';
 
-import '../Homepage.dart';
-
-class PasswordScreen extends StatefulWidget {
-  const PasswordScreen({super.key});
+class ForgotEmail extends StatefulWidget {
+  const ForgotEmail({super.key});
 
   @override
-  State<PasswordScreen> createState() => _PasswordScreen();
+  State<ForgotEmail> createState() => _ForgotEmail();
 }
 
-class _PasswordScreen extends State<PasswordScreen> {
-  bool? isChecked = false;
-
+class _ForgotEmail extends State<ForgotEmail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,18 +29,28 @@ class _PasswordScreen extends State<PasswordScreen> {
                   fontSize: 24,
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 15),
               Text(
-                  "Welcome",
+                  "Account recovery",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                 ),
               ),
               SizedBox(height: 5),
-              Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+
+                  Center(
+                    child: Text(
+                    "      To help your account safe, Google\n wants to make sure it's really you trying to\n                            sign in",
+                style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 15,
+                ), 
+              ),
+                  ),
+
+              SizedBox(height: 7),
+
                   Text(
                   "anonymous@gmail.com",
                 style: TextStyle(
@@ -52,13 +58,38 @@ class _PasswordScreen extends State<PasswordScreen> {
                   fontSize: 15,
                 ), 
               ),
-              ],
-              
+            
+              SizedBox(height: 15),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                  "        Get a verification code",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold
+                ), 
               ),
+                ],),
               
+              SizedBox(height: 10),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                  "        To get a verification code, first confirm the\n        recovery email address you added to your account\n        ear***********@yahoo.com",
+                
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 15,
+                ), 
+              ),
+                ],),
               SizedBox(height: 30),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 21.0),
+                padding: const EdgeInsets.symmetric(horizontal: 30.0),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.black,
@@ -66,74 +97,34 @@ class _PasswordScreen extends State<PasswordScreen> {
                     borderRadius: BorderRadius.circular(5),  
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 0.0),
+                    padding: const EdgeInsets.only(left: 10.0),
                     child: TextField(
-                      obscureText: true,
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
-                        hintText: "Enter your password",
-                        labelText: "   Enter your password",
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.blueAccent),
-                        ),
+                        border: InputBorder.none,
+                        hintText: "Enter recovery email address",
                         hintStyle: TextStyle(
                   color: Colors.grey,
                   fontSize: 15,
-                ),
-                labelStyle: TextStyle(
-                  color: Colors.grey
                 ),
                       ),
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                    Expanded(
-                    child: CheckboxListTile(
-                      side: BorderSide(color: Color(0xff585858)),
-                        controlAffinity: ListTileControlAffinity.leading,
-                          value: isChecked,
-                          title: Text("Show Password",
-                            style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                        ), 
-                          ),
-                          activeColor: Colors.blueAccent,
-                          onChanged: (newBool) {
-                            setState(() {
-                              isChecked = newBool;
-                            });
-                          },
-                        ),    
-                  ) 
-              ],),
-             SizedBox(height: 30),
+              
+             SizedBox(height: 50),
              Row(
                 mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                // Text('           Forgot Password?', 
-                // style: TextStyle(
-                //   color: Colors.lightBlueAccent,
-                //   fontWeight: FontWeight.bold
-                //   )),
-                TextButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const ForgotPass()));
-                      }, child: const Text("    Forgot Password?",
-                     style: TextStyle(
-                  color: Colors.blueAccent,
-                  fontSize: 15,
-                ), 
-                )),
+                Text('        Try another way', 
+                style: TextStyle(
+                  color: Colors.lightBlueAccent,
+                  fontWeight: FontWeight.bold
+                  )),
               ]
              ),
-              SizedBox(height: 135),
+              SizedBox(height: 35),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 30.0,
@@ -144,7 +135,7 @@ class _PasswordScreen extends State<PasswordScreen> {
                     mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                      padding: EdgeInsets.all(5),
+                      padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
                         color: Colors.blueAccent,
                         borderRadius: BorderRadius.circular(5),
@@ -152,17 +143,18 @@ class _PasswordScreen extends State<PasswordScreen> {
                       child: MaterialButton(
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const HomepageScreen()));
+                        builder: (context) => const SignUpScreen()));
                   },
                       child: Center(
                         child: Text(
-                          'Next',
+                          'Send',
                           style: TextStyle(color: Colors.black),
                           
                         ),
                       ),
                     ),
-                )],
+                    ),
+                  ],
                 ),
               ),
           ]
