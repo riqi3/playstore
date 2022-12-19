@@ -360,17 +360,17 @@ class _carouselState extends State<carousel> {
 }
 
 void _modalTC(BuildContext context) {
-double fontSize = 10;
+  double fontSize = 10;
 
   List<String> appInfo = [
-    'assets/games/cc/cc-profile',
+    'assets/games/cc/cc-profile.png',
     'Candy Crush Saga',
     'Rated for 3+',
     'Contains ads •',
     'In-app purchases',
   ];
 
-  double font_style = 18;
+  double font_style = 25;
 
   showModalBottomSheet(
     context: context,
@@ -387,53 +387,56 @@ double fontSize = 10;
         decoration: BoxDecoration(),
         child: ListView(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(0.0),
-              child: Container(
-                child: Column(
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                            color: grey2,
-                            width: 1,
-                          ),
+            Container(
+              child: Column(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: grey2,
+                          width: 1,
                         ),
-                        color: Colors.white,
                       ),
+                      color: Colors.white,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top:10.0, bottom: 10.0),
                       child: Row(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(bottom: 30.0),
-                            child: Text(
-                              'logo',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w500, fontSize: 30),
+                            padding: const EdgeInsets.only(bottom: 0.0),
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0, top: 10.0),
+                              child: Image.asset(
+                                "${appInfo[0]}",
+                                scale: 9,
+                              ),
                             ),
                           ),
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(bottom: 30.0),
+                                padding: const EdgeInsets.only(top: 2, bottom: 2),
                                 child: Text(
                                   "${appInfo[1]}",
                                   style: TextStyle(
                                       fontWeight: FontWeight.w500,
-                                      fontSize: fontSize),
+                                      fontSize: 20),
                                 ),
                               ),
                               Row(
                                 children: [
                                   _rating(),
                                   Icon(
-                                                Icons.star,
-                                                size: 13,
-                                              ),
+                                    Icons.star,
+                                    size: 12,
+                                  ),
                                   Padding(
-                                    padding:
-                                        const EdgeInsets.only(bottom: 30.0),
+                                    padding: const EdgeInsets.only(left: 5.0),
                                     child: Text(
                                       "${appInfo[2]}",
                                       style: TextStyle(
@@ -446,8 +449,7 @@ double fontSize = 10;
                               Row(
                                 children: [
                                   Padding(
-                                    padding:
-                                        const EdgeInsets.only(bottom: 30.0),
+                                    padding: const EdgeInsets.only(bottom: 0.0),
                                     child: Text(
                                       "${appInfo[3]}",
                                       style: TextStyle(
@@ -456,8 +458,7 @@ double fontSize = 10;
                                     ),
                                   ),
                                   Padding(
-                                    padding:
-                                        const EdgeInsets.only(bottom: 30.0),
+                                    padding: const EdgeInsets.only(bottom: 0.0),
                                     child: Text(
                                       "${appInfo[4]}",
                                       style: TextStyle(
@@ -472,77 +473,8 @@ double fontSize = 10;
                         ],
                       ),
                     ),
-                    // Container(
-                    //   width: MediaQuery.of(context).size.width,
-                    //   decoration: BoxDecoration(
-                    //     borderRadius: BorderRadius.only(
-                    //       topRight: Radius.circular(10),
-                    //       topLeft: Radius.circular(10),
-                    //     ),
-                    //     border: Border.all(
-                    //       color: grey2,
-                    //       width: 1,
-                    //     ),
-                    //     color: topChart,
-                    //   ),
-                    //   child: Padding(
-                    //     padding: const EdgeInsets.all(13.0),
-                    //     child: Text(
-                    //       "${tf_title[0]}",
-                    //       style: TextStyle(
-                    //         color: topChart2,
-                    //         fontSize: font_style,
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
-                    // Container(
-                    //   width: MediaQuery.of(context).size.width,
-                    //   decoration: BoxDecoration(
-                    //     borderRadius: BorderRadius.only(),
-                    //     border: Border.all(
-                    //       color: grey2,
-                    //       width: 1,
-                    //     ),
-                    //     color: Colors.white,
-                    //   ),
-                    //   child: Padding(
-                    //     padding: const EdgeInsets.all(13.0),
-                    //     child: Text(
-                    //       "${tf_title[1]}",
-                    //       style: TextStyle(
-                    //         color: grey3,
-                    //         fontSize: font_style,
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
-                    // Container(
-                    //   width: MediaQuery.of(context).size.width,
-                    //   decoration: BoxDecoration(
-                    //     borderRadius: BorderRadius.only(
-                    //       bottomRight: Radius.circular(10),
-                    //       bottomLeft: Radius.circular(10),
-                    //     ),
-                    //     border: Border.all(
-                    //       color: grey2,
-                    //       width: 1,
-                    //     ),
-                    //     color: Colors.white,
-                    //   ),
-                    //   child: Padding(
-                    //     padding: const EdgeInsets.all(13.0),
-                    //     child: Text(
-                    //       "${tf_title[2]}",
-                    //       style: TextStyle(
-                    //         color: grey3,
-                    //         fontSize: font_style,
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -550,14 +482,9 @@ double fontSize = 10;
       ),
     ),
   );
-
-
-
 }
 
-
-
-  Text _rating() {
+Text _rating() {
   Random random = new Random();
   double randomNumber = random.nextDouble() * 5;
   randomNumber = double.parse(randomNumber.toStringAsFixed(1));
