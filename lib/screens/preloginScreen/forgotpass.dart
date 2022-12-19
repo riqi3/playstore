@@ -31,7 +31,7 @@ class _ForgotPass extends State<ForgotPass> {
               ),
               SizedBox(height: 15),
               Text(
-                  "Account recovery",
+                  "Change password",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
@@ -41,7 +41,7 @@ class _ForgotPass extends State<ForgotPass> {
 
                   Center(
                     child: Text(
-                    "      To help your account safe, Google\n wants to make sure it's really you trying to\n                            sign in",
+                    "anonymous@gmail.com",
                 style: TextStyle(
                     color: Colors.grey,
                     fontSize: 15,
@@ -51,42 +51,33 @@ class _ForgotPass extends State<ForgotPass> {
 
               SizedBox(height: 7),
 
-                  Text(
-                  "anonymous@gmail.com",
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                      "         Create a strong password",
                 style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 15,
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold
                 ), 
               ),
+                    ],
+                  ),
             
               SizedBox(height: 15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                  "        Get a verification code",
+                  "         Create a new, strong password that you don't use for other\n         websites",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 15,
-                  fontWeight: FontWeight.bold
                 ), 
               ),
                 ],),
               
-              SizedBox(height: 10),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                  "        To get a verification code, first confirm the\n        recovery email address you added to your account\n        ear***********@yahoo.com",
-                
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 15,
-                ), 
-              ),
-                ],),
               SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -97,15 +88,57 @@ class _ForgotPass extends State<ForgotPass> {
                     borderRadius: BorderRadius.circular(5),  
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
+                    padding: const EdgeInsets.only(left: 1.0),
                     child: TextField(
                       style: TextStyle(color: Colors.white),
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: true,
                       decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "Enter recovery email address",
+                        hintText: "Create password",
+                        labelText: "   Create password",
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.blueAccent),
+                        ),
                         hintStyle: TextStyle(
                   color: Colors.grey,
                   fontSize: 15,
+                ),
+                labelStyle: TextStyle(
+                  color: Colors.grey
+                ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 30),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(5),  
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 1.0),
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        hintText: "Create password",
+                        labelText: "   Confirm password",
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.blueAccent),
+                        ),
+                        
+                        hintStyle: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 15,
+                ),
+                labelStyle: TextStyle(
+                  color: Colors.grey
                 ),
                       ),
                     ),
@@ -113,18 +146,7 @@ class _ForgotPass extends State<ForgotPass> {
                 ),
               ),
               
-             SizedBox(height: 50),
-             Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text('        Try another way', 
-                style: TextStyle(
-                  color: Colors.lightBlueAccent,
-                  fontWeight: FontWeight.bold
-                  )),
-              ]
-             ),
-              SizedBox(height: 35),
+              SizedBox(height: 100),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 30.0,
@@ -147,7 +169,7 @@ class _ForgotPass extends State<ForgotPass> {
                   },
                       child: Center(
                         child: Text(
-                          'Send',
+                          'Next',
                           style: TextStyle(color: Colors.black),
                           
                         ),

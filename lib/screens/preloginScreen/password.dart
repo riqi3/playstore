@@ -24,7 +24,7 @@ class _PasswordScreen extends State<PasswordScreen> {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 50),
+              SizedBox(height: 30),
               Text(
                   "Google",
                 style: TextStyle(
@@ -33,7 +33,7 @@ class _PasswordScreen extends State<PasswordScreen> {
                   fontSize: 24,
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 10),
               Text(
                   "Welcome",
                 style: TextStyle(
@@ -66,16 +66,22 @@ class _PasswordScreen extends State<PasswordScreen> {
                     borderRadius: BorderRadius.circular(5),  
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
+                    padding: const EdgeInsets.only(left: 0.0),
                     child: TextField(
                       obscureText: true,
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
-                        border: InputBorder.none,
                         hintText: "Enter your password",
+                        labelText: "   Enter your password",
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.blueAccent),
+                        ),
                         hintStyle: TextStyle(
                   color: Colors.grey,
                   fontSize: 15,
+                ),
+                labelStyle: TextStyle(
+                  color: Colors.grey
                 ),
                       ),
                     ),
@@ -127,7 +133,7 @@ class _PasswordScreen extends State<PasswordScreen> {
                 )),
               ]
              ),
-              SizedBox(height: 140),
+              SizedBox(height: 135),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 30.0,
